@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un produit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Titre principal */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    background-color: #1e73be; /* Fond bleu */
+    color: #fff; /* Texte blanc */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    box-sizing: border-box; 
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+
+.availability {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.availability label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-container {
+        padding: 15px 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-container {
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 12px;
+    }
+}
+</style>
+<body>
+    <div class="container">
+      
+        <div class="form-container">
+          <h1>Ajouter un produit</h1>
+            <form action="#" method="post">
+                <!-- Nom du produit -->
+                <div class="form-group">
+                    <label for="productName">Nom du produit</label>
+                    <input type="text" id="productName" name="productName" placeholder="Entrez le nom du produit" required>
+                </div>
+
+                <!-- Produits en stock -->
+                <div class="form-group">
+                    <label for="number">Produits en stock</label>
+                    <input type="number" id="number" name="number" placeholder="Nombre de produits disponibles" required>
+                </div>
+
+                <!-- Description du produit -->
+                <div class="form-group">
+                    <label for="aboutProduct">Description</label>
+                    <textarea id="aboutProduct" name="aboutProduct" rows="5" placeholder="Entrez une description" required></textarea>
+                </div>
+
+                <!-- Disponibilité -->
+                <div class="form-group availability">
+                    <label>Disponibilité</label>
+                    <label>
+                        <input type="checkbox" name="availability" value="disponible">
+                        Disponible
+                    </label>
+                    <label>
+                        <input type="checkbox" name="availability" value="en-attente">
+                        En attente
+                    </label>
+                </div>
+
+                <!-- Bouton Ajouter -->
+                <div class="form-group">
+                    <button type="submit">Ajouter le produit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
